@@ -1,0 +1,69 @@
+#!/usr/bin/env Rscript
+
+# This R script works (poorly) in RStudio or git-bash because 
+# of the 'shebang' in line 1 above. Please use the the 'R Notebook'
+# version with the '.Rmd' extension.
+
+cat("\n")
+cat("########################################################\n")
+cat("####### Deliverable 1 - Linear Regression to Predict MPG\n")
+cat("########################################################\n")
+cat("\n")
+
+# If you are trying to run this script from git-bash, you may need to
+# uncomment and run the following 'install.packages' line so that
+# the 'dplyr' library is found:
+
+# install.packages("tidyverse",  repos = "http://cran.us.r-project.org")
+library(dplyr)
+
+mc_mpg <- read.csv("./MechaCar_mpg.csv")
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mc_mpg))
+
+# I can't get the 'car' library to install from 'git-bash',
+# but it works find in RStudio.
+#
+# install.packages("car",  repos = "http://cran.us.r-project.org")
+#
+# In order to generate the 'Added Variable Plots' which plot the dependent
+# variable against each and every independent variable, do this:
+#library(car)
+#model <- lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mc_mpg)
+#avPlots(model, layout=c(2,3), marginal.scale=FALSE)
+
+cat("\n")
+cat("############################################################\n")
+cat("####### Deliverable 2 - Visualizations for the Trip Analysis\n")
+cat("############################################################\n")
+cat("\n")
+
+coils <- read.csv("./Suspension_Coil.csv")
+
+total_summary <- summarize(coils, Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+cat('\n')
+total_summary
+cat('\n')
+
+lots <- group_by(coils, Manufacturing_Lot)
+lot_summary <- summarize(lots, Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI), .groups="keep")
+cat('\n')
+lot_summary
+cat('\n')
+
+cat("\n")
+cat("###################################################\n")
+cat("####### Deliverable 3 - T-Tests on Suspension Coils\n")
+cat("###################################################\n")
+cat("\n")
+
+all_lots_psi <- coils['PSI']
+t.test(all_lots_psi[['PSI']], mu=1500)
+
+lot1_psi <- subset(coils, Manufacturing_Lot == "Lot1")
+t.test(lot1_psi[['PSI']], mu=1500)
+
+lot2_psi <- subset(coils, Manufacturing_Lot == "Lot2")
+t.test(lot2_psi[['PSI']], mu=1500)
+
+lot3_psi <- subset(coils, Manufacturing_Lot == "Lot3")
+t.test(lot3_psi[['PSI']], mu=1500)
