@@ -123,6 +123,6 @@ Using our knowledge of R, we designed a statistical study to compare performance
       4. For a larger chi-squared table, there is at least one observation for every unique value and at least 80% of all unique values have five or more observations.
 
 
-## <span style="color: lightgreen;">Summary</span>
+## <span style="color: lightgreen;">
 
 
