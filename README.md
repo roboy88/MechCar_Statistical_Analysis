@@ -125,10 +125,4 @@ Using our knowledge of R, we designed a statistical study to compare performance
 
 ## <span style="color: lightgreen;">Summary</span>
 
-As has been the case for every Module in this bootcamp, this Challenge took much longer than the time estimate given in the online material.
-However, it was a very interesting assignment.
-I have only been exposed very lightly to statistics in college and/or grad school.
-Even though it was extremely short, this introduction taught me a lot.
 
-In addition, my first impression of the R Programming Language was not very positive.
-However, by playing around with RStudio, the R and Rscript user-level commands, R Markdown files, Jupyter Notebook for R; and having seen the other online material about how programs can generate visually appealing documents via the Knit tool, etc.; I'm more impressed. If I have an opportunity to use R professionally in the future, I will look forward to learning more about it!
