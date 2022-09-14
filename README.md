@@ -4,7 +4,7 @@ We analyzed data for AutosRUs’ newest prototype, the MechaCar, which is suffer
 
 Technologies Used:
 - R
-- tidyverse / dplyr package(s)
+- tidyverse 
 - RStudio
 
 ## <span style="color: lightgreen;">Overview</span>
